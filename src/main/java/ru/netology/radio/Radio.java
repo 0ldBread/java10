@@ -5,23 +5,26 @@ public class Radio {
     private int radioStations;
     private int volume;
 
-    public Radio(int maxRadioStations){
+    public Radio(int maxRadioStations) {
         this.maxRadioStations = maxRadioStations;
 
     }
-    public Radio (){
+
+    public Radio() {
         maxRadioStations = 9;
     }
 
     public int getRadioStations() {
+
         return radioStations;
     }
 
-    public int getMaxRadioStations(){
+    public int getMaxRadioStations() {
         return maxRadioStations;
     }
 
     public int getVolume() {
+
         return volume;
     }
 
@@ -48,10 +51,12 @@ public class Radio {
 
 
     public void nextStation() {
+
         radioStations = radioStations >= 9 ? 0 : ++radioStations;
     }
 
     public void prevStation() {
+
         radioStations = radioStations <= 0 ? 9 : --radioStations;
     }
 
@@ -62,10 +67,6 @@ public class Radio {
     }
 
     public void lowerTheVolume() {
-        if (volume > 0) {
-            volume = volume - 1;
-        } else {
-            volume = 0;
-        }
+        volume = volume <= 0 ? 0 : --volume;
     }
 }
