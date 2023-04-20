@@ -5,6 +5,7 @@ public class Radio {
     private int volume;
 
     public int getRadioStations() {
+
         return radioStations;
     }
 
@@ -34,10 +35,12 @@ public class Radio {
 
 
     public void nextStation() {
+
         radioStations = radioStations >= 9 ? 0 : ++radioStations;
     }
 
     public void prevStation() {
+
         radioStations = radioStations <= 0 ? 9 : --radioStations;
     }
 
@@ -48,10 +51,6 @@ public class Radio {
     }
 
     public void lowerTheVolume() {
-        if (volume > 0) {
-            volume = volume - 1;
-        } else {
-            volume = 0;
+        volume = volume <= 0 ? 0 : --volume;
         }
     }
-}
